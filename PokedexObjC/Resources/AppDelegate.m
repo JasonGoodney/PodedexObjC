@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "JTGPokemonController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [JTGPokemonController fetchPokemonForSearchTerm:@"pikachu" completion:^(JTGPokemon * pokemon) {
+        NSLog(@"%@", pokemon);
+    }];
+    
     return YES;
 }
 
